@@ -47,5 +47,5 @@ app.register_blueprint(twitter_bp, url_prefix='/api/v1/twitter')
 
 if __name__ == '__main__':
     port = int(os.getenv("PORT",5000))
-    hostname = str(os.getenv("hostname","localhost"))
+    hostname = str(os.getenv("hostname",'0.0.0.0'))
     app.run(host=hostname,port=port,debug=True)
