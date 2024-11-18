@@ -1,0 +1,9 @@
+# ignore config.env file
+config/config.env
+
+#ignore .venv file 
+.venv
+
+dataset
+
+testing.py
