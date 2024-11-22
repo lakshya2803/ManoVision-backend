@@ -138,7 +138,7 @@ def handle_form_submit():
             currentmh = -0.87
         else:
             # Handle other cases as needed
-            currentmh = 0.93
+            currentmh = 0.9
         
         user = User.find_user(email)
         username = user['user_id'] # retrieving user's twitter username
@@ -148,8 +148,15 @@ def handle_form_submit():
         filename = f"all_sentiment_score_{rest_id}.csv"
         filepath = os.path.join(folderpath,filename)
         df = pd.read_csv(filepath)
+
         twitter_score = df['average_sentiment_score'].iloc[0]
-        mental_health_score = (currentmh + twitter_score) / 2
+        # Assign weights (70% for form score, 30% for Twitter score)
+        weight_form = 0.7
+        weight_twitter = 0.3
+
+        # Calculate weighted mental health score
+        mental_health_score = (currentmh * weight_form) + (twitter_score * weight_twitter)
+
         updated_user = User.update_user_score(email,mental_health_score)
         if updated_user:
             print(f"{username} mental health score updated in mongo")
