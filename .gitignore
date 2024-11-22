@@ -7,3 +7,6 @@ config/config.env
 dataset
 
 testing.py
+
+__pycache__/
+*.pyc
