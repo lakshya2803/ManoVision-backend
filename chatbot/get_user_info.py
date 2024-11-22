@@ -68,6 +68,6 @@ def get_user_info_api():
         else:
             print("error in twitter api",res.status_code)
         
-        return jsonify({"message":"User info fetched succussfully"}), 200
+        return jsonify({"message":"User data fetched succussfully"}), 200
     except Exception as e:
         return jsonify({"message":"error in fetching","error":str(e)}),500
