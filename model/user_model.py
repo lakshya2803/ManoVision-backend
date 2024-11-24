@@ -1,7 +1,7 @@
 from config.db import get_db
 
 class User:
-    def __init__(self,name,email,user_id,password,gender,age,address,mental_health_score, rest_id, image_url):
+    def __init__(self,name,email,user_id,password,gender,age,address,mental_health_score, rest_id, image_url,twiiter_score):    #changed here
         self.name = name
         self.email = email
         self.user_id = user_id
@@ -12,6 +12,7 @@ class User:
         self.mental_health_score = mental_health_score
         self.rest_id = rest_id
         self.image_url = image_url
+        self.twitter_score = twiiter_score #changed here
         
     @staticmethod
     def create_user(name,email,password,gender,age,address):
