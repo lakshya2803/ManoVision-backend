@@ -31,7 +31,7 @@ class User:
     def find_user(email):
         db = get_db()
         return db.users.find_one({"email":email})
-    
+
     @staticmethod
     def verify_user(email,password):
         user = User.find_user(email)
@@ -39,6 +39,15 @@ class User:
             return True
         else:
             return False
+
+    @staticmethod       # new method
+    def add_twitter_score(email,twitter_score):
+        db = get_db()
+        result = db.users.update_one(
+            {"email" : email},
+            {"$set" : {"twitter_score" : twitter_score}}
+        )
+        return result.modified_count > 0;
 
     @staticmethod
     def update_user_twitter_username(email,user_id):
