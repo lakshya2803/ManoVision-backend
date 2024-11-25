@@ -29,7 +29,7 @@ def data_cleaning():
 def data_cleaning2(rest_id,username):
     print("Running data_cleaning2 on data")
 
-    folderpath = f'/tmp/dataset/{username}'      #made a change
+    folderpath = f'dataset/{username}'      
     filename = f'{rest_id}_details.csv'
     filepath = os.path.join(folderpath,filename)
     # Read the CSV file into a DataFrame
