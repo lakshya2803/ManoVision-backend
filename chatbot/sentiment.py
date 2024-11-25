@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from model.user_model import User  
 
 
 def analyze_sentiment_for_user(user_id):
