@@ -113,6 +113,11 @@ def analyze_sentiment_for_userApi(rest_id,username):
     for Id,avg in user_sentiment_scores.items():
         updated_user = User.add_twitter_score(Id,avg)
 
+    if updated_user:
+        print("user's average score updated successfully")
+    else:
+        print('error in updating user average score')
+
     # Save the DataFrame to a new CSV file
     filename3 = f"all_sentiment_score_{rest_id}.csv"
     filepath3 = os.path.join(folderpath,filename3)
