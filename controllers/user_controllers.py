@@ -127,9 +127,9 @@ def handle_form_submit():
         sum_of_ans = q1+q2+q3+q4+q5+q6+q7+q8+q9
         # Set currentmh based on the value of sum_of_ans
         if 1 <= sum_of_ans <= 4:
-            currentmh = 0.87
+            currentmh = 0.75 
         elif 5 <= sum_of_ans <= 9:
-            currentmh = 0.62
+            currentmh = 0.25
         elif 10 <= sum_of_ans <= 14:
             currentmh = 0
         elif 15 <= sum_of_ans <= 19:
