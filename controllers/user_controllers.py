@@ -150,6 +150,7 @@ def handle_form_submit():
         df = pd.read_csv(filepath)
 
         twitter_score = df['average_sentiment_score'].iloc[0]
+        twitter_score = user['twitter_score']  # made a change
         # Assign weights (70% for form score, 30% for Twitter score)
         weight_form = 0.7
         weight_twitter = 0.3
