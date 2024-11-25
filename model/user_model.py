@@ -41,10 +41,10 @@ class User:
             return False
 
     @staticmethod       # new method
-    def add_twitter_score(email,twitter_score):
+    def add_twitter_score(rest_id,twitter_score):
         db = get_db()
         result = db.users.update_one(
-            {"email" : email},
+            {"rest_id" : rest_id},
             {"$set" : {"twitter_score" : twitter_score}}
         )
         return result.modified_count > 0;
