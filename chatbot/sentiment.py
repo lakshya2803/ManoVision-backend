@@ -95,6 +95,8 @@ def analyze_sentiment_for_userApi(rest_id,username):
         # Store the user's average sentiment score in the dictionary
         user_sentiment_scores[rest_id] = average_score
 
+        updated_user = User.add_twitter_score(rest_id,average_score)
+
         # Append user's data to the data_list
         for post_text, sentiment_score in zip(df['full_text'], compound_scores):
             data_list.append([rest_id, post_text, created_at, sentiment_score])
@@ -109,6 +111,8 @@ def analyze_sentiment_for_userApi(rest_id,username):
 
     # Create a DataFrame for unique user_id and average_sentiment_score
     all_sentiment_scores_df = pd.DataFrame(list(user_sentiment_scores.items()), columns=['rest_id', 'average_sentiment_score'])
+
+    
 
     # Save the DataFrame to a new CSV file
     filename3 = f"all_sentiment_score_{rest_id}.csv"
