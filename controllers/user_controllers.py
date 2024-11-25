@@ -133,9 +133,9 @@ def handle_form_submit():
         elif 10 <= sum_of_ans <= 14:
             currentmh = 0
         elif 15 <= sum_of_ans <= 19:
-            currentmh = -0.62
+            currentmh = -0.25
         elif 20 <= sum_of_ans <= 27:
-            currentmh = -0.87
+            currentmh = -0.75
         else:
             # Handle other cases as needed
             currentmh = 0.9
