@@ -36,7 +36,7 @@ def get_user_info_api():
             image_url = user_info['data']['legacy']['profile_image_url_https']
 
             # Specify the output file and folder
-            folder_path = "/tmp/dataset"     # made a change
+            folder_path = "dataset"     
             folder = os.path.join(folder_path,username)
             # creating directory if not created
             os.makedirs(folder, exist_ok=True)
