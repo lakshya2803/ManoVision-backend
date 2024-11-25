@@ -8,7 +8,7 @@ from chatbot.backend import data_cleaning2
 
 
 def tweet_extraction(username,rest_id):
-    folderpath = f"/tmp/dataset/{username}"      #made a change
+    folderpath = f"dataset/{username}"     
     filename = f"{rest_id}_info.csv"
     filepath = os.path.join(folderpath,filename)
 
