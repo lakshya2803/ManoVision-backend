@@ -65,7 +65,7 @@ def analyze_sentiment_for_user(user_id):
 
 def analyze_sentiment_for_userApi(rest_id,username):
 
-    folderpath = f'/tmp/dataset/{username}'  #made a change
+    folderpath = f'dataset/{username}'  
     filename = f'{rest_id}_cleandata.csv'
     filepath = os.path.join(folderpath,filename)
     # Read the CSV file into a DataFrame
